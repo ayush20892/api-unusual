@@ -5,6 +5,10 @@ require('dotenv').config()
 const { errorHandler } = require('./middlewares/errorHandler.js')
 const { routeNotFound } = require('./middlewares/routeNotFound.js')
 
+const {  intializeDBConnection } = require('./db/db.connect.js')
+
+intializeDBConnection()
+
 app.get('/', (req,res) => {
   res.send({ "API" : "Unusual" })
 })
