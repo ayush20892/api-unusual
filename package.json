@@ -1,0 +1,26 @@
+{
+  "name": "api-unusual",
+  "version": "1.0.0",
+  "description": "Api for Unusual Ecom",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "devstart": "nodemon ./bin/www",
+    "start": "node index.js"
+  },
+  "author": "Ayush Sharma",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^9.0.2",
+    "express": "^4.17.1",
+    "lodash": "^4.17.21",
+    "mongodb": "^3.6.6",
+    "mongoose": "^5.12.8",
+    "mongoose-type-url": "^2.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
