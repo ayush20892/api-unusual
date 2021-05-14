@@ -3,29 +3,19 @@ const app = express()
 var cors = require('cors')
 require('dotenv').config()
 
+// importing middlewares
 const { errorHandler } = require('./middlewares/errorHandler.js')
 const { routeNotFound } = require('./middlewares/routeNotFound.js')
+const { corsOptions } = require('./middlewares/corsOptions.js')
 
 const {  intializeDBConnection } = require('./db/db.connect.js')
 
 
 
-const originlist = ["https://unusual-ecom.netlify.app", "http://localhost:8000"];
-const corsOptions = {
-  origin: function (origin, callback) {
-      if (originlist.indexOf(origin) !== -1 || !origin) {
-          callback(null, true);
-      } else {
-          callback(new Error("Not allowed by CORS"));
-      }
-  },
-  optionsSuccessStatus: 200,
-};
+app.use(cors(corsOptions));
 
 
 intializeDBConnection()
-
-app.use(cors(corsOptions));
 
 
 
