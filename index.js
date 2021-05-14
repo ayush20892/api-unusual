@@ -11,6 +11,9 @@ const { corsOptions } = require('./middlewares/corsOptions.js')
 const {  intializeDBConnection } = require('./db/db.connect.js')
 
 
+// importing diffrent routers
+var  productRouter = require('./router/product.router.js')
+
 
 app.use(cors(corsOptions));
 
@@ -23,6 +26,9 @@ app.get('/', (req,res) => {
   res.send({ success: true, meesage: "API for Unusual" })
 })
 
+
+// Router Intialization
+app.use('/products', productRouter)
 
 
 
