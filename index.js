@@ -12,7 +12,8 @@ const {  intializeDBConnection } = require('./db/db.connect.js')
 
 
 // importing diffrent routers
-var  productRouter = require('./router/product.router.js')
+var productRouter = require('./router/product.router.js')
+var categoryRouter = require('./router/category.Router.js')
 
 
 app.use(cors(corsOptions));
@@ -29,7 +30,7 @@ app.get('/', (req,res) => {
 
 // Router Intialization
 app.use('/products', productRouter)
-
+app.use('/category', categoryRouter)
 
 
 
